@@ -1,111 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercícios de Funções JS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-        }
-        .exercise-section {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        label, input, button {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input[type="number"], input[type="text"] {
-            width: 200px;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        button {
-            padding: 10px 15px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .result {
-            margin-top: 15px;
-            padding: 10px;
-            background-color: #e9ecef;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
     <h1>Exercícios de Funções JavaScript</h1>
 
-    <div class="exercise-section" id="ex1">
+    <section class="exercise-section">
         <h2>Exercício 1: MAIOR_MENOR</h2>
         <p>Encontra o maior e o menor de cinco números.</p>
-        <label for="num1_ex1">Número 1:</label><input type="number" id="num1_ex1">
-        <label for="num2_ex1">Número 2:</label><input type="number" id="num2_ex1">
-        <label for="num3_ex1">Número 3:</label><input type="number" id="num3_ex1">
-        <label for="num4_ex1">Número 4:</label><input type="number" id="num4_ex1">
-        <label for="num5_ex1">Número 5:</label><input type="number" id="num5_ex1">
-        <button onclick="executarExercicio1()">Executar</button>
-        <div class="result" id="resultado_ex1"></div>
-    </div>
+        <label for="n1-1">Número 1:</label>
+        <input type="number" id="n1-1">
+        <label for="n1-2">Número 2:</label>
+        <input type="number" id="n1-2">
+        <label for="n1-3">Número 3:</label>
+        <input type="number" id="n1-3">
+        <label for="n1-4">Número 4:</label>
+        <input type="number" id="n1-4">
+        <label for="n1-5">Número 5:</label>
+        <input type="number"id="n1-5">
+        <button id="btn1">Executar</button>
+        <div id="result1" class="result"></div>
+    </section>
 
-    <div class="exercise-section" id="ex2">
+    <section class="exercise-section">
         <h2>Exercício 2: VOGAL</h2>
         <p>Verifica se um caractere é uma vogal.</p>
-        <label for="char_ex2">Caractere:</label><input type="text" id="char_ex2" maxlength="1">
-        <button onclick="executarExercicio2()">Executar</button>
-        <div class="result" id="resultado_ex2"></div>
-    </div>
+        <label for="char2">Caractere:</label>
+        <input type="text" id="char2" maxlength="1">
+        <button id="btn2">Executar</button>
+        <div id="result2" class="result"></div>
+    </section>
 
-    <div class="exercise-section" id="ex3">
-            <h2>Exercício 3: LIMITES</h2>
-            <p>Exibe os números inteiros em um intervalo e calcula seu somatório.</p>
-            <label for="limiteInf_ex3">Limite Inferior:</label><input type="number" id="limiteInf_ex3">
-            <label for="limiteSup_ex3">Limite Superior:</label><input type="number" id="limiteSup_ex3">
-            <button onclick="executarExercicio3()">Executar</button>
-            <div class="result" id="resultado_ex3"></div>
-        </div>
-       
-        <div class="exercise-section" id="ex4">
-            <h2>Exercício 4: ORDEM</h2>
-            <p>Ordena três números em ordem crescente.</p>
-            <label for="num1_ex4">Número 1:</label><input type="number" id="num1_ex4">
-            <label for="num2_ex4">Número 2:</label><input type="number" id="num2_ex4">
-            <label for="num3_ex4">Número 3:</label><input type="number" id="num3_ex4">
-            <button onclick="executarExercicio4()">Executar</button>
-            <div class="result" id="resultado_ex4"></div>
-        </div>
+    <section class="exercise-section">
+        <h2>Exercício 3: LIMITES</h2>
+        <p>Exibe os números inteiros em um intervalo e calcula seu somatório.</p>
+        <label for="limit3-1">Limite Inferior:</label>
+        <input type="number" id="limit3-1">
+        <label for="limit3-2">Limite Superior:</label>
+        <input type="number" id="limit3-2">
+        <button id="btn3">Executar</button>
+        <div id="result3" class="result"></div>
+    </section>
 
-        <div class="exercise-section" id="ex5">
-            <h2>Exercício 5: POSITIVO_NEGATIVO</h2>
-            <p>Verifica se um número é positivo ou negativo.</p>
-            <label for="num_ex5">Número:</label><input type="number" id="num_ex5">
-            <button onclick="executarExercicio5()">Executar</button>
-            <div class="result" id="resultado_ex5"></div>
-        </div>
+    <section class="exercise-section">
+        <h2>Exercício 4: ORDEM</h2>
+        <p>Ordena três números em ordem crescente.</p>
+        <label for="n4-1">Número 1:</label>
+        <input type="number" id="n4-1">
+        <label for="n4-2">Número 2:</label>
+        <input type="number" id="n4-2">
+        <label for="n4-3">Número 3:</label>
+        <input type="number" id="n4-3">
+        <button id="btn4">Executar</button>
+        <div id="result4" class="result"></div>
+    </section>
 
-        <div class="exercise-section" id="ex6">
-            <h2>Exercício 6: PAR_IMPAR</h2>
-            <p>Verifica se um número é par ou ímpar.</p>
-            <label for="num_ex6">Número:</label><input type="number" id="num_ex6">
-            <button onclick="executarExercicio6()">Executar</button>
-            <div class="result" id="resultado_ex6"></div>
-        </div>
+    <section class="exercise-section">
+        <h2>Exercício 5: POSITIVO_NEGATIVO</h2>
+        <p>Verifica se um número é positivo ou negativo.</p>
+        <label for="n5">Número:</label>
+        <input type="number" id="n5">
+        <button id="btn5">Executar</button>
+        <div id="result5" class="result"></div>
+    </section>
 
+    <section class="exercise-section">
+        <h2>Exercício 6: PAR_IMPAR</h2>
+        <p>Verifica se um número é par ou ímpar.</p>
+        <label for="n6">Número:</label>
+        <input type="number" id="n6">
+        <button id="btn6">Executar</button>
+        <div id="result6" class="result"></div>
+    </section>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
