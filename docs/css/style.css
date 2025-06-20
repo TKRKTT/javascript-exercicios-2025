@@ -7,8 +7,16 @@ body {
     text-align: center; /* Centraliza o texto */
 }
 
-h1, h2 {
-    color: #333;
+h1 {
+    background-color: #4682B4; /* Azul aço para o título principal */
+    color: white; /* Texto branco para contraste */
+    padding: 15px 0; /* Espaçamento interno superior e inferior */
+    margin-bottom: 30px; /* Margem abaixo do título para separação */
+    border-radius: 8px; /* Cantos arredondados para um visual mais suave */
+    text-align: center; /* Centraliza o título */
+}
+h2 {
+    color: #4CAF50; /* Título verde */
 }
 
 .exercise-section {
@@ -17,6 +25,9 @@ h1, h2 {
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 800px; /* Largura máxima para a seção de exercícios */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
     text-align: center; /* Centraliza o texto */
 }
 
@@ -28,7 +39,7 @@ label, input, button {
 }
 
 input[type="number"], input[type="text"] {
-    width: 200px;
+    width: 200px; /* Largura padrão para desktop */
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -45,6 +56,7 @@ button {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
 }
 
 button:hover {
@@ -62,7 +74,77 @@ button:hover {
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
+    /* Limita a largura máxima do resultado */
     max-width: 90%;
-    text-align: center; /* Limita a largura máxima do resultado */
+    text-align: center;
 
 }
+
+/* --- Media Queries para Responsividade --- */
+
+/* Estilos para telas pequenas (mobile) */
+@media (max-width: 600px){
+    body {
+        margin: 10px; /* Reduz a margem em telas pequenas */
+    }
+
+    h1 {
+        padding: 10px 0; /* Reduz o padding do título em telas pequenas */
+        font-size: 1.3em; /* Reduz o tamanho da fonte do título */
+        margin-bottom: 20px; /* Reduz a margem abaixo do título */
+    }
+
+    input[type="number"], 
+    input[type="text"] {
+        width: 90%; /* Inputs ocupam quase a largura total da seção */
+        box-sizing: border-box; /* Inclui padding e borda na largura total */
+        border-radius: 6px; /* Aumenta o arredondamento dos cantos */
+    }
+
+    .exercise-section {
+        padding: 15px; /* Reduz o padding em telas pequenas */
+        width: 100%; /* Largura total em telas pequenas */
+        margin-bottom: 15px; /* Aumenta o espraçamento entre os campos */
+        border-radius: 6px; /* Aumenta o arredondamento dos cantos */
+    }
+
+    button {
+        width: 90%; /* Botão ocupa toda a largura disponível */
+        box-sizing: border-box; /* Garante que padding e borda não aumentem a largura total */
+        font-size: 0.9em; /* Reduz o tamanho da fonte do botão */
+        padding: 12px 0; /* Aumenta o padding do botão para melhor usabilidade em telas pequenas */
+    }
+    .result {
+        width: 100%; /* Resultado ocupa quase a largura total da seção */
+        font-size: 0.9em; /* Reduz o tamanho da fonte do resultado */
+        padding: 8px; /* Reduz o padding do resultado */
+    }
+}
+
+
+/* Estilos para telas entre 601px e 900px (tablets e alguns laptops menores) */
+@media (min-width: 601px) and (max-width: 900px){
+    .exercise-section {
+        max-width: 90%; /* Largura máxima de 90% para telas médias */
+        padding: 8px; /* Mantém o padding original */
+        font-size: 0.9em;
+    }
+    input[type="number"], 
+    input[type="text"] {
+        width: 60%; /* Inputs ocupam 60% da largura da seção */
+    }
+    button {
+        width: 50%; /* Botão ocupa 50% da largura da seção */
+    }
+}
+
+
+
+/* Estilos para telas maiores que 900px (desktops), mantendo o padrão */
+
+ @media (min-width: 901px){
+    .exercise-section{
+        max-width: 800px; /* Largura máxima para desktops */
+        padding: 20px; /* Padding padrão para desktops */
+    }
+ }  
