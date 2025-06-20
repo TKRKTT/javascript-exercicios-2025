@@ -13,8 +13,9 @@ h1 {
     padding: 15px 0; /* Espaçamento interno superior e inferior */
     margin-bottom: 30px; /* Margem abaixo do título para separação */
     border-radius: 8px; /* Cantos arredondados para um visual mais suave */
-    text-align: center; /* Centraliza o título */
+    text-align: center; /* Garante que o texto dentro do h1 também esteja centralizado */
 }
+
 h2 {
     color: #4CAF50; /* Título verde */
 }
@@ -45,6 +46,10 @@ input[type="number"], input[type="text"] {
     border-radius: 4px;
 }
 
+input.input-error {
+    border: 2px solid #FF6347; /* Tomate vermelho para a borda */
+}
+
 button {
     padding: 10px 15px;
     background-color: #4CAF50; /* Botão verde */
@@ -73,78 +78,90 @@ button:hover {
     min-height: 20px;
     margin-left: auto;
     margin-right: auto;
-    width: fit-content;
-    /* Limita a largura máxima do resultado */
+    width: auto;
     max-width: 90%;
     text-align: center;
+}
 
+.error-message {
+    color: #FF6347; /* Tomate vermelho para o texto */
+    font-size: 0.85em;
+    margin-top: -8px; /* Ajusta a margem para ficar mais perto do input */
+    margin-bottom: 10px;
+    height: 1.2em; /* Garante que o espaço seja reservado, mesmo que vazio */
+    text-align: center;
+    display: block; /* Para garantir que ocupa a linha inteira para centralização */
 }
 
 /* --- Media Queries para Responsividade --- */
 
-/* Estilos para telas pequenas (mobile) */
-@media (max-width: 600px){
+/* Estilos para telas pequenas (mobile) - largura máxima de 600px */
+@media (max-width: 600px) {
     body {
-        margin: 10px; /* Reduz a margem em telas pequenas */
+        margin: 15px; /* Aumenta a margem do corpo para dar mais espaço nas laterais */
     }
 
     h1 {
-        padding: 10px 0; /* Reduz o padding do título em telas pequenas */
-        font-size: 1.3em; /* Reduz o tamanho da fonte do título */
-        margin-bottom: 20px; /* Reduz a margem abaixo do título */
+        padding: 10px 15px; /* Adiciona padding lateral ao título */
+        font-size: 1.2em; /* Ajusta o tamanho da fonte do título para mobile */
+        margin-bottom: 20px;
+        box-sizing: border-box; /* Garante que padding não estoure a largura */
+    }
+
+    .exercise-section {
+        padding: 20px 15px; /* Aumenta o padding interno (vertical 20px, horizontal 15px) */
+        width: auto; /* Permite que a largura se ajuste automaticamente com base nas margens do body */
+        max-width: 100%; /* Garante que não exceda a largura do pai */
+        margin-bottom: 15px;
+        border-radius: 6px;
     }
 
     input[type="number"], 
     input[type="text"] {
-        width: 90%; /* Inputs ocupam quase a largura total da seção */
-        box-sizing: border-box; /* Inclui padding e borda na largura total */
-        border-radius: 6px; /* Aumenta o arredondamento dos cantos */
-    }
-
-    .exercise-section {
-        padding: 15px; /* Reduz o padding em telas pequenas */
-        width: 100%; /* Largura total em telas pequenas */
-        margin-bottom: 15px; /* Aumenta o espraçamento entre os campos */
-        border-radius: 6px; /* Aumenta o arredondamento dos cantos */
+        width: 85%; /* Reduz a largura dos inputs para criar mais espaço lateral */
+        box-sizing: border-box; 
+        border-radius: 6px;
     }
 
     button {
-        width: 90%; /* Botão ocupa toda a largura disponível */
-        box-sizing: border-box; /* Garante que padding e borda não aumentem a largura total */
-        font-size: 0.9em; /* Reduz o tamanho da fonte do botão */
-        padding: 12px 0; /* Aumenta o padding do botão para melhor usabilidade em telas pequenas */
+        width: 85%; /* Reduz a largura dos botões para criar mais espaço lateral */
+        box-sizing: border-box; 
+        font-size: 0.9em;
+        padding: 12px 0;
     }
+
     .result {
-        width: 100%; /* Resultado ocupa quase a largura total da seção */
-        font-size: 0.9em; /* Reduz o tamanho da fonte do resultado */
-        padding: 8px; /* Reduz o padding do resultado */
+        width: 90%; /* Ajusta a largura do resultado */
+        font-size: 0.9em;
+        padding: 8px;
+        box-sizing: border-box;
     }
 }
 
 
 /* Estilos para telas entre 601px e 900px (tablets e alguns laptops menores) */
-@media (min-width: 601px) and (max-width: 900px){
+@media (min-width: 601px) and (max-width: 900px) {
     .exercise-section {
-        max-width: 90%; /* Largura máxima de 90% para telas médias */
-        padding: 8px; /* Mantém o padding original */
-        font-size: 0.9em;
+        max-width: 90%; 
+        padding: 15px 20px; /* Ajusta padding para tablets */
+        font-size: 1em; /* Tamanho da fonte padrão */
     }
+
     input[type="number"], 
     input[type="text"] {
-        width: 60%; /* Inputs ocupam 60% da largura da seção */
+        width: 60%; 
     }
+
     button {
-        width: 50%; /* Botão ocupa 50% da largura da seção */
+        width: 50%; 
     }
 }
 
 
-
-/* Estilos para telas maiores que 900px (desktops), mantendo o padrão */
-
- @media (min-width: 901px){
-    .exercise-section{
-        max-width: 800px; /* Largura máxima para desktops */
-        padding: 20px; /* Padding padrão para desktops */
+/* Estilos para telas maiores que 900px (desktops) */
+@media (min-width: 901px) {
+    .exercise-section {
+        max-width: 800px;
+        padding: 20px;
     }
- }  
+}
