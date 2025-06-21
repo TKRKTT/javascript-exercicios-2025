@@ -162,7 +162,7 @@ button.clear-button:hover {
 
     h1 {
         padding: 15px 15px; 
-        font-size: 2.3em; /* AUMENTADO: Tamanho da fonte do título h1 para mobile */
+        font-size: 2.8em; /* AUMENTADO: Tamanho da fonte do título h1 para mobile */
         margin-bottom: 20px;
         box-sizing: border-box;
     }
@@ -221,8 +221,11 @@ button.clear-button:hover {
 
     .error-message { 
         font-size: 0.75em;
-        margin-top: -6px; 
-        margin-bottom: 4px; 
+        /* Ajustes para a mensagem de erro no mobile para evitar sobreposição */
+        margin-top: 2px; /* Reduz a margem superior para não ficar tão "colado" */
+        margin-bottom: 8px; /* Aumenta a margem inferior para empurrar o botão */
+        position: relative; /* Garante que o elemento ocupe seu espaço e empurre o próximo */
+        min-height: 1.5em; /* Garante espaço suficiente mesmo quando vazia para evitar "saltos" no layout */
     }
 }
 
