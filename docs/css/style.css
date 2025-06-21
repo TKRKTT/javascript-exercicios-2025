@@ -162,7 +162,7 @@ button.clear-button:hover {
 
     h1 {
         padding: 15px 15px; 
-        font-size: 2em; 
+        font-size: 2.3em; /* AUMENTADO: Tamanho da fonte do título h1 para mobile */
         margin-bottom: 20px;
         box-sizing: border-box;
     }
