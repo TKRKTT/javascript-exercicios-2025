@@ -68,6 +68,16 @@ button:hover {
     background-color: #45a049; /* Botão verde mais escuro ao passar o mouse */
 }
 
+/* Novo estilo para o botão de Limpar */
+button.clear-button {
+    background-color: #f44336; /* Vermelho para o botão de limpar */
+    margin-top: 10px; /* Espaçamento acima do botão de limpar */
+}
+
+button.clear-button:hover {
+    background-color: #e53935; /* Vermelho mais escuro ao passar o mouse */
+}
+
 .result {
     margin-top: 15px;
     padding: 10px;
